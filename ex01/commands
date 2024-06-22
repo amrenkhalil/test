@@ -1,0 +1,32 @@
+
+Fallocate non useable anymore instead use truncate :
+
+	truncate -s 40 testDay00
+	 -s : size of file 40  means kb
+			   40M means MB
+
+
+You can also use dd :
+	dd if=/dev/zero of=testDay00 sb=1 count=40
+	if input file 
+	/dev/zero a path of a file that contains null bytes (zeros)
+	of output file
+	sb block size nothing means kb anything else should be defined
+	count how many blocks
+
+To change timestamp
+	touch -amt 202304131013 testDay00
+		   yyyymmddhhmm
+	if same year the time will be displayed else year will be displayed
+
+Permission you are already used to it chmod
+	rwx decimal 7 binary 111
+	r-- decimal 4 binary 100
+	-w- decimal 2 binary 010
+	--x decimal 1 binary 001
+
+	user group other
+	7    7     7
+	rwx  rwx   rwx
+
+
